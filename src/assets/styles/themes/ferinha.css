@@ -1,0 +1,271 @@
+/* Variáveis do sistema de design baseadas no tema Ferinha */
+:root {
+  /* Cores */
+  --base-100: oklch(100% 0 0);
+  --base-200: oklch(97% 0 0);
+  --base-300: oklch(94% 0 0);
+  --base-content: oklch(0% 0 0);
+  --primary: oklch(15.906% 0 0);
+  --primary-content: oklch(100% 0 0);
+  --neutral-content: oklch(100% 0 0);
+
+  /* Sistema tipográfico responsivo */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.375rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.625rem);
+  --text-2xl: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
+  --text-3xl: clamp(1.875rem, 1.4rem + 2.375vw, 3rem);
+  --text-4xl: clamp(2.25rem, 1.6rem + 3.25vw, 3.75rem);
+
+  /* Espaçamento */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Raio de borda */
+  --radius: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  /* Outras variáveis */
+  --border: 1px;
+  --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Reset e estilos base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0 solid;
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--base-content);
+  background-color: var(--base-200);
+  padding: var(--space-6);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Títulos */
+h1 {
+  font-size: var(--text-4xl);
+  line-height: 1.1;
+  margin-top: var(--space-16);
+  margin-bottom: var(--space-8);
+  font-weight: 800;
+  color: var(--primary);
+}
+
+h2 {
+  font-size: var(--text-3xl);
+  line-height: 1.2;
+  margin-top: var(--space-12);
+  margin-bottom: var(--space-6);
+  font-weight: 700;
+  color: var(--primary);
+}
+
+h3 {
+  font-size: var(--text-2xl);
+  line-height: 1.3;
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-4);
+  font-weight: 600;
+}
+
+h4 {
+  font-size: var(--text-xl);
+  line-height: 1.4;
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+  font-weight: 600;
+}
+
+/* Parágrafos e texto */
+p {
+  margin-bottom: var(--space-6);
+  line-height: 1.7;
+}
+
+strong {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Links */
+a {
+  display: inline-block;
+  color: var(--primary);
+  text-decoration: underline;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* Listas */
+main ul,
+main ol {
+  margin-bottom: var(--space-6);
+  padding-left: var(--space-8);
+}
+
+main li {
+  margin-bottom: var(--space-2);
+}
+
+/* Blocos de citação */
+blockquote {
+  border-left: 4px solid var(--primary);
+  padding-left: var(--space-3);
+  margin: var(--space-8) 0;
+  font-style: italic;
+  background-color: var(--base-200);
+}
+
+blockquote p::after,
+blockquote p::before {
+  content: '"';
+}
+
+/* Código */
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 0.875em;
+  background-color: var(--base-200);
+  padding: 0.2em 0.4em;
+  border-radius: var(--radius);
+  border: var(--border) solid var(--base-300);
+}
+
+pre {
+  background-color: var(--base-200);
+  padding: var(--space-4);
+  border-radius: var(--radius);
+  overflow: auto;
+  margin: var(--space-8) 0;
+  border: var(--border) solid var(--base-300);
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  border: none;
+}
+
+main > time {
+  background: #e9e8e8;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* Imagens */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  margin: var(--space-8) 0;
+}
+
+/* Divisores */
+hr {
+  border: none;
+  height: 1px;
+  background-color: var(--base-300);
+  margin: var(--space-12) 0;
+}
+
+/* Tabelas */
+table {
+  display: block;
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-8) 0;
+  overflow: auto;
+}
+
+th,
+td {
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  border-bottom: 1px solid var(--base-300);
+}
+
+th {
+  font-weight: 600;
+  background-color: var(--base-200);
+}
+
+/* Elementos de destaque */
+::selection {
+  background-color: var(--primary);
+  color: var(--primary-content);
+}
+
+/* Melhorias de legibilidade para texto longo */
+main {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Estilos para telas pequenas */
+@media (max-width: 768px) {
+  body {
+    padding: var(--space-4);
+  }
+
+  h1 {
+    font-size: var(--text-3xl);
+  }
+
+  h2 {
+    font-size: var(--text-2xl);
+  }
+
+  h3 {
+    font-size: var(--text-xl);
+  }
+}
+
+/* HEADER */
+#header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: var(--space-8);
+}
+
+.nav__lista {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+}
+
+/* ARTICLE -  */
+.postagem--recente {
+  background: #edecec;
+  padding: 20px 20px;
+  border-radius: 4px;
+}
+
+.postagem--recente h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}

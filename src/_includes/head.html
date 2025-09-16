@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="{{ config.siteLang }}">
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="description" content="{{ description }}" />
+  <title>{{ title }}</title>
+
+  <!--cache busting-->
+  {% if page.url == '/' %}
+  <meta http-equiv="Cache-Control" content="max-age=0, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  {% endif %}
+
+  <!--opengraph cards-->
+  <meta property="og:title" content="{{ config.siteName }}" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ config.siteURL }}{{ page.url }}" />
+  <meta property="og:image" content="{{ config.siteURL }}/javali.svg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ config.siteName }}" />
+  <meta name="twitter:description" content="{{ description }}" />
+  <meta name="twitter:image" content="{{ config.siteURL }}/javali.svg" />
+
+  <!--styles-->
+  <link rel="stylesheet" href="/assets/styles/style.css" type="text/css" />
+  <link rel="stylesheet" href="/assets/styles/themes/{{ config.siteStyle }}.css" type="text/css" />
+  <link rel="icon" sizes="16x16 24x24 32x32 64x64" href="/favicon.ico">
+</head>
+{{ content }}
+
+</html>

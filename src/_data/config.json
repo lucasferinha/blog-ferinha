@@ -1,0 +1,11 @@
+{
+  "siteName": "Ferinha",
+  "siteDescription": "Construo experiências web minimalistas, rápidas e irresistíveis para humanos e mecanismos de busca. Minha missão é elevar seu negócio, afastar a concorrência e garantir que cada pixel trabalhe a seu favor.",
+  "siteURL": "http://localhost:1234/",
+  "siteAuthor": "Lucas",
+  "siteLang": "pt-br",
+  "authorLink": "https://github.com/",
+  "authorContact": "aquelequeobserva@proton.me",
+  "siteStyle": "ferinha",
+  "siteSubDir": "/"
+}
